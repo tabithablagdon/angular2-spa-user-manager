@@ -40,7 +40,7 @@ System.register(['@angular/http', '@angular/core', 'rxjs/add/operator/map'], fun
                         .map(function (newUser) { return newUser.json(); });
                 };
                 GetUsersService.prototype.updateUser = function (id, userInterface) {
-                    return this._http.post(this._url + id, JSON.stringify(userInterface))
+                    return this._http.put(this._url + id, JSON.stringify(userInterface))
                         .map(function (newUser) { return newUser.json(); });
                 };
                 GetUsersService.prototype.deleteUser = function (id) {
@@ -50,9 +50,10 @@ System.register(['@angular/http', '@angular/core', 'rxjs/add/operator/map'], fun
                 };
                 GetUsersService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [http_1.Http])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
                 ], GetUsersService);
                 return GetUsersService;
+                var _a;
             }());
             exports_1("GetUsersService", GetUsersService);
         }

@@ -35,9 +35,10 @@ System.register(['@angular/core', '@angular/router-deprecated'], function(export
                         template: "\n    <nav class=\"navbar navbar-default\" role=\"navigation\">\n      <div class=\"container-fluid\">\n\n        <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" [routerLink]=\"['Home']\">foo.com | User Manager</a>\n        </div>\n\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <ul class=\"nav navbar-nav\">\n          <li [class.active]=\"isCurrentRoute(['Home'])\">\n            <a [routerLink]=\"['Home']\">Home</a>\n          </li>\n            <li [class.active]=\"isCurrentRoute(['Users'])\">\n              <a [routerLink]=\"['Users']\">Manage Users</a>\n            </li>\n            <li [class.active]=\"isCurrentRoute(['Posts'])\">\n              <a [routerLink]=\"['Posts']\">Manage User Posts</a>\n            </li>\n            <li [class.active]=\"isCurrentRoute(['UserAnalytics'])\">\n              <a [routerLink]=\"['UserAnalytics']\">User Analytics <span class=\"label label-primary\">Coming Soon</span></a>\n            </li>\n          </ul>\n        </div>\n\n      </div>\n      </nav>\n  ",
                         directives: [router_deprecated_1.ROUTER_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [router_deprecated_1.Router])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof router_deprecated_1.Router !== 'undefined' && router_deprecated_1.Router) === 'function' && _a) || Object])
                 ], NavbarComponent);
                 return NavbarComponent;
+                var _a;
             }());
             exports_1("NavbarComponent", NavbarComponent);
         }

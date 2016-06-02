@@ -27,7 +27,7 @@ export class GetUsersService {
   }
 
   updateUser(id, userInterface: UserInterface) {
-    return this._http.post(this._url+id, JSON.stringify(userInterface))
+    return this._http.put(this._url+id, JSON.stringify(userInterface))
       .map(newUser => newUser.json());
   }
 

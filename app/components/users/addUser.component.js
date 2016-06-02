@@ -105,9 +105,10 @@ System.register(['@angular/core', '@angular/common', '@angular/router-deprecated
                         templateUrl: 'app/components/users/addUser.component.html',
                         providers: [getUser_service_1.GetUsersService, http_1.HTTP_PROVIDERS]
                     }), 
-                    __metadata('design:paramtypes', [common_1.FormBuilder, router_deprecated_1.Router, getUser_service_1.GetUsersService, router_deprecated_1.RouteParams])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof common_1.FormBuilder !== 'undefined' && common_1.FormBuilder) === 'function' && _a) || Object, (typeof (_b = typeof router_deprecated_1.Router !== 'undefined' && router_deprecated_1.Router) === 'function' && _b) || Object, getUser_service_1.GetUsersService, (typeof (_c = typeof router_deprecated_1.RouteParams !== 'undefined' && router_deprecated_1.RouteParams) === 'function' && _c) || Object])
                 ], AddUserComponent);
                 return AddUserComponent;
+                var _a, _b, _c;
             }());
             exports_1("AddUserComponent", AddUserComponent);
         }

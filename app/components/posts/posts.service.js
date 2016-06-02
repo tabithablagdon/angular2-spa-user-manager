@@ -42,9 +42,10 @@ System.register(['@angular/http', '@angular/core', 'rxjs/add/operator/map', 'rxj
                 };
                 PostsService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [http_1.Http])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
                 ], PostsService);
                 return PostsService;
+                var _a;
             }());
             exports_1("PostsService", PostsService);
         }
