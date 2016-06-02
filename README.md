@@ -1,6 +1,6 @@
 # angular2-spa-user-manager
 
-<p>User Manager is a single page application built with Angular 2 - simulates an internal-use user manager interface an internet company can use to manage its users/clients.  More complex features can be added.</p>
+<p>User Manager is a single page application built in TypeScript with Angular 2 - simulates an internal-use user manager interface an internet company can use to manage its users/clients.  More complex features can be added.</p>
 
 <p>
 <h3>Current Features:</h3>
