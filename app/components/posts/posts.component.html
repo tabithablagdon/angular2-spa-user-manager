@@ -1,0 +1,61 @@
+<h2>User Posts</h2>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <!-- Posts filter -->
+    <select class="form-control" (change)="reloadPosts({userId: u.value})" #u>
+      <option value="">Select a user to view posts</option>
+      <option *ngFor="let user of users" value="{{user.id}}">{{ user.name }}</option>
+    </select>
+
+    <hr>
+
+    <!-- Displays loading while server is loading posts -->
+    <loading *ngIf="!hasLoaded"></loading>
+
+    <!-- Display loaded posts from server -->
+    <ul class="list-group">
+      <li *ngFor="let post of pagedPosts"
+        (click)="displayPost(post)"
+        [class.active]="selected === post"
+        class="list-group-item posts clickable">
+        {{ post.title }}
+      </li>
+    </ul>
+
+    <!-- Displays 10 posts at a time per page -->
+    <pagination [items]="posts" (page-changed)="onPageChanged($event)"></pagination>
+
+  </div>
+
+  <!-- Panel of Posts Detail/Comments - Displays to right of list of posts -->
+  <div class="col-md-6">
+    <div class="panel panel-default" *ngIf="selected">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{ selected.title }}</h3>
+      </div>
+     <div class="panel-body">
+        <p>{{ selected.body }}</p>
+     </div>
+
+     <h4>Comments</h4>
+     <div class="media comment" *ngFor="let comment of comments">
+       {{ comment.email}}
+       <div class="media-left media-middle">
+         <a href="#">
+           <img
+             class="media-object"
+             src="http://lorempixel.com/80/80/people?random={{comment.id}}"
+             alt="avatar" height="80" width="80">
+         </a>
+       </div>
+       <div class="media-body">
+         <h4 class="media-heading">{{ comment.name }}</h4>
+         <p>{{ comment.body }}</p>
+       </div>
+     </div>
+   </div>
+  </div>
+
+</div>

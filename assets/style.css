@@ -1,0 +1,15 @@
+body {
+  padding: 30px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.posts:hover {
+  background-color: #ccc;
+}
+
+.post-detail {
+  float: right;  
+}
