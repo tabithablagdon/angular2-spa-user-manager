@@ -43,6 +43,21 @@ export class PostsComponent implements OnInit {
     this._usersService.getUsers()
       .subscribe(user => this.users = user);
   }
+  /**
+   * Loads posts from server with optional user filter
+   * @param  {Object} filter [Optional: loads specific user post]
+   * @return {Array}         [List of posts]
+   */
+  loadPosts(filter?){
+    this.hasLoaded = false;
+
+    this._postsService.getPosts(filter)
+      .subscribe(post => {
+        console.log(post);
+        this.posts = post;
+        this.pagedPosts = this.getPostsInPage(1);
+      }, null, () => { this.hasLoaded = true;});
+  }
 
   displayPost(post){
     this.selected = post;
@@ -53,17 +68,6 @@ export class PostsComponent implements OnInit {
         console.log(comment);
         this.comments = comment;
       });
-  }
-
-  loadPosts(filter?){
-    this.hasLoaded = false;
-
-    this._postsService.getPosts(filter)
-      .subscribe(post => {
-        console.log(post);
-        this.posts = post;
-        this.pagedPosts = this.getPostsInPage(1);
-      }, null, () => { this.hasLoaded = true;});
   }
 
   onPageChanged(page){

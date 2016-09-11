@@ -83,6 +83,7 @@ export class AddUserComponent implements CanDeactivate, OnInit {
     result = this.id ? this._usersService.updateUser(this.id, this.addUserForm.value) : this._usersService.addUser(this.addUserForm.value);
 
     result.subscribe(data => {
+      alert("User changes have been saved.");
       this._router.navigate(['Users']);
     });
   }

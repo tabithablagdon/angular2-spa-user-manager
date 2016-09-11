@@ -46,16 +46,11 @@ System.register(['@angular/core', '../../shared/loading.component', './posts.ser
                     this._usersService.getUsers()
                         .subscribe(function (user) { return _this.users = user; });
                 };
-                PostsComponent.prototype.displayPost = function (post) {
-                    var _this = this;
-                    this.selected = post;
-                    var id = post.id;
-                    this._postsService.getComments(id)
-                        .subscribe(function (comment) {
-                        console.log(comment);
-                        _this.comments = comment;
-                    });
-                };
+                /**
+                 * Loads posts from server with optional user filter
+                 * @param  {Object} filter [Optional: loads specific user post]
+                 * @return {Array}         [List of posts]
+                 */
                 PostsComponent.prototype.loadPosts = function (filter) {
                     var _this = this;
                     this.hasLoaded = false;
@@ -65,6 +60,16 @@ System.register(['@angular/core', '../../shared/loading.component', './posts.ser
                         _this.posts = post;
                         _this.pagedPosts = _this.getPostsInPage(1);
                     }, null, function () { _this.hasLoaded = true; });
+                };
+                PostsComponent.prototype.displayPost = function (post) {
+                    var _this = this;
+                    this.selected = post;
+                    var id = post.id;
+                    this._postsService.getComments(id)
+                        .subscribe(function (comment) {
+                        console.log(comment);
+                        _this.comments = comment;
+                    });
                 };
                 PostsComponent.prototype.onPageChanged = function (page) {
                     this.pagedPosts = this.getPostsInPage(page);

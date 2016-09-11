@@ -58,7 +58,7 @@ System.register(['@angular/core', '@angular/router-deprecated', './users/addUser
                     ]),
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <nav-bar></nav-bar>\n\n    <div class=\"container\">\n      <router-outlet></router-outlet>\n\n       <hr>\n\n       <footer><p>&copy; 2016 Foo, Inc.</p></footer>\n    </div>\n\n\n  ",
+                        template: "\n    <nav-bar></nav-bar>\n\n    <div class=\"container\">\n      <router-outlet></router-outlet>\n       <hr>\n       <footer><p>&copy; 2016 Foo, Inc.</p></footer>\n    </div>\n  ",
                         directives: [navbar_component_1.NavbarComponent, router_deprecated_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])

@@ -50,10 +50,9 @@ System.register(['@angular/http', '@angular/core', 'rxjs/add/operator/map'], fun
                 };
                 GetUsersService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], GetUsersService);
                 return GetUsersService;
-                var _a;
             }());
             exports_1("GetUsersService", GetUsersService);
         }

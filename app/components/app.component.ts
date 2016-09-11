@@ -28,19 +28,14 @@ import {UserAnalyticsComponent} from './user-analytics/useranalytics.component';
 
     <div class="container">
       <router-outlet></router-outlet>
-
        <hr>
-
        <footer><p>&copy; 2016 Foo, Inc.</p></footer>
     </div>
-
-
   `,
   directives: [NavbarComponent, ROUTER_DIRECTIVES]
 
 })
 
 export class AppComponent {
-
 
 }
